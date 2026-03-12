@@ -11,14 +11,12 @@ export const Footer: React.FC = () => {
 
           {/* Column 1: Brand */}
           <div className="col-span-1 md:col-span-1">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="h-14 w-14 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
-                <Icons.Briefcase className="w-8 h-8 text-primary" />
-              </div>
-              <div>
-                <span className="font-display font-bold text-2xl tracking-tight">{COMPANY_INFO.name}</span>
-                <p className="text-accent text-[10px] tracking-[0.2em] uppercase mt-1">Conseil aux Entreprises</p>
-              </div>
+            <div className="mb-6">
+              <img
+                src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Logo%20Consulting.PNG"
+                alt="SC+CONSULTING"
+                className="h-16 w-auto object-contain invert"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Société de conseil aux professionnels dans le domaine du marketing, de la communication, du management et de la gestion.

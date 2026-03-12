@@ -132,12 +132,12 @@ export const QuoteWizard: React.FC = () => {
                       : 'border-gray-100 dark:border-neutral-800 hover:border-accent/50 dark:hover:border-accent/50'
                   }`}
                 >
-                  <div className={`p-3 rounded-full mr-4 ${category === cat.id ? 'bg-accent text-white' : 'bg-gray-100 dark:bg-neutral-800 text-gray-500 dark:text-gray-400'}`}>
+                  <div className={`p-3 rounded-full mr-4 flex-shrink-0 ${category === cat.id ? 'bg-accent text-white' : 'bg-gray-100 dark:bg-neutral-800 text-gray-500 dark:text-gray-400'}`}>
                     <cat.icon size={24} />
                   </div>
-                  <div>
-                    <h3 className="font-bold text-primary dark:text-white">{cat.title}</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{cat.desc}</p>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-primary dark:text-white text-sm sm:text-base">{cat.title}</h3>
+                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">{cat.desc}</p>
                   </div>
                 </button>
               ))}
