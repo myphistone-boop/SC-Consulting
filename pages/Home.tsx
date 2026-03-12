@@ -72,9 +72,14 @@ export const Home: React.FC = () => {
              <div className="relative group order-first lg:order-none">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-neutral-800">
                   <img
+                    src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Consultants-Meeting-Image-Header.jpg"
+                    alt="Consultants SC+CONSULTING en action"
+                    className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 lg:hidden"
+                  />
+                  <img
                     src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/iStock-182059533-1024x683.jpg"
                     alt="Consultants SC+CONSULTING en action"
-                    className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hidden lg:block"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6 md:p-8">
                      <div className="text-white">
