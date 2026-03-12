@@ -1,8 +1,8 @@
 export enum ProjectType {
-  ELECTRICITY = 'Électricité Générale',
-  RENOVATION = 'Rénovation Électrique',
-  INSTALLATION = 'Installation Neuve',
-  DOMOTIQUE = 'Domotique'
+  MARKETING = 'Conseil en Marketing',
+  COMMUNICATION = 'Conseil en Communication',
+  MANAGEMENT = 'Conseil en Management',
+  GESTION = 'Conseil en Gestion'
 }
 
 export interface Service {
@@ -36,15 +36,17 @@ export interface QuoteFormData {
 }
 
 export const COMPANY_INFO = {
-  name: "M.MTRAVAUX",
-  owner: "M.MTRAVAUX",
-  phone: "06 52 23 66 76",
-  phoneClean: "0652236676",
-  email: "contact@mmtravaux.fr",
-  zone: "Lozère (48) — Saint-Étienne-Vallée-Française & alentours",
-  hours: "Lun-Ven 08:00–17:00",
+  name: "SC+CONSULTING",
+  owner: "Turkyilmaz Celalcan & Kaydok Selami",
+  phone: "+33 7 51 66 01 64",
+  phoneClean: "+33751660164",
+  email: "contact@scplusconsulting.fr",
+  zone: "Le Péage-de-Roussillon (38) & alentours",
+  hours: "Lun-Ven 08:00–18:00 | Sam 09:00–16:00",
   logo: "",
-  address: "Le Meyran Lieu dit, 48330 Saint-Étienne-Vallée-Française",
+  address: "18 Rue Bois Imbert, 38550 Le Péage-de-Roussillon, France",
+  siret: "83973597400017",
+  linkedin: "https://www.linkedin.com/company/scplusconsulting/?originalSubdomain=fr",
   rating: "5,0",
-  reviewCount: 28
+  reviewCount: 15
 };

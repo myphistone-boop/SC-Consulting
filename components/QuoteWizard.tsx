@@ -4,7 +4,7 @@ import { ProjectType, QuoteFormData, COMPANY_INFO } from '../types';
 
 export const QuoteWizard: React.FC = () => {
   const [step, setStep] = useState(1);
-  const [category, setCategory] = useState<'urgent' | 'gros_oeuvre' | null>(null);
+  const [category, setCategory] = useState<'ponctuel' | 'accompagnement' | null>(null);
   const [subType, setSubType] = useState<string | null>(null);
   const [formData, setFormData] = useState<QuoteFormData>({
     projectType: null,
@@ -28,80 +28,80 @@ export const QuoteWizard: React.FC = () => {
   };
 
   const categories = [
-    { id: 'urgent', title: 'Intervention Rapide', icon: Icons.Electric, desc: "Dépannage électrique urgent (panne, court-circuit...)" },
-    { id: 'gros_oeuvre', title: 'Projet Gros Œuvre', icon: Icons.Hammer, desc: "Rénovation, installation neuve, mise aux normes" },
+    { id: 'ponctuel', title: 'Consultation Ponctuelle', icon: Icons.Lightbulb, desc: "Conseil ciblé sur une problématique précise" },
+    { id: 'accompagnement', title: 'Accompagnement Complet', icon: Icons.Briefcase, desc: "Suivi régulier et mise en oeuvre stratégique" },
   ];
 
-  const majorTypes = [
-    { type: "Rénovation électrique complète", icon: Icons.Renovation },
-    { type: "Installation neuve", icon: Icons.Blueprint },
-    { type: "Mise aux normes NFC 15-100", icon: Icons.Shield },
-    { type: "Domotique & Volets électriques", icon: Icons.Settings },
-    { type: "VMC & Ventilation", icon: Icons.HVAC },
-    { type: "Vidéosurveillance & Alarmes", icon: Icons.Shield },
+  const accompagnementTypes = [
+    { type: "Stratégie marketing complète", icon: Icons.Target },
+    { type: "Plan de communication", icon: Icons.Megaphone },
+    { type: "Accompagnement management", icon: Icons.Users },
+    { type: "Optimisation gestion financière", icon: Icons.Chart },
+    { type: "Transformation digitale", icon: Icons.Lightbulb },
+    { type: "Audit organisationnel", icon: Icons.Shield },
     { type: "Autre projet", icon: Icons.Plus },
   ];
 
-  const urgentTypes = [
-    { type: "Panne de courant", icon: Icons.Electric },
-    { type: "Court-circuit", icon: Icons.Wrench },
-    { type: "Disjoncteur qui saute", icon: Icons.Settings },
-    { type: "Prise / interrupteur défectueux", icon: Icons.Renovation },
-    { type: "Autre intervention rapide", icon: Icons.Plus },
+  const ponctuelTypes = [
+    { type: "Étude de marché", icon: Icons.Target },
+    { type: "Business plan", icon: Icons.Chart },
+    { type: "Identité visuelle", icon: Icons.Megaphone },
+    { type: "Coaching dirigeant", icon: Icons.Users },
+    { type: "Autre consultation", icon: Icons.Plus },
   ];
 
-  const urgentSpecs: Record<string, { label: string, options: { id: string, label: string, price: string, delay: string }[] }> = {
-    "Panne de courant": {
-      label: "Quel type de panne ?",
+  const ponctuelSpecs: Record<string, { label: string, options: { id: string, label: string, price: string, delay: string }[] }> = {
+    "Étude de marché": {
+      label: "Quel niveau d'étude ?",
       options: [
-        { id: 'partielle', label: "Panne partielle (une pièce / un circuit)", price: "80€ - 130€", delay: "Moins de 2h" },
-        { id: 'totale', label: "Panne totale (plus de courant)", price: "100€ - 180€", delay: "Moins de 2h" },
+        { id: 'rapide', label: "Étude rapide (analyse concurrentielle)", price: "Sur devis", delay: "1-2 semaines" },
+        { id: 'complete', label: "Étude complète (marché + positionnement)", price: "Sur devis", delay: "3-4 semaines" },
       ]
     },
-    "Court-circuit": {
-      label: "Où se situe le problème ?",
+    "Business plan": {
+      label: "Quel type de business plan ?",
       options: [
-        { id: 'apparent', label: "Prise / interrupteur qui a grillé", price: "90€ - 140€", delay: "Moins de 2h" },
-        { id: 'encastre', label: "Câblage encastré / odeur de brûlé", price: "120€ - 200€", delay: "Moins de 3h" },
+        { id: 'creation', label: "Création d'entreprise", price: "Sur devis", delay: "2-3 semaines" },
+        { id: 'developpement', label: "Développement / nouveau projet", price: "Sur devis", delay: "2-4 semaines" },
       ]
     },
-    "Disjoncteur qui saute": {
-      label: "À quelle fréquence ?",
+    "Identité visuelle": {
+      label: "Quel besoin ?",
       options: [
-        { id: 'ponctuel', label: "Ponctuel (un appareil en cause)", price: "80€ - 120€", delay: "Moins de 2h" },
-        { id: 'frequent', label: "Fréquent (problème d'installation)", price: "120€ - 200€", delay: "Moins de 3h" },
+        { id: 'creation', label: "Création complète (logo, charte...)", price: "Sur devis", delay: "2-4 semaines" },
+        { id: 'refonte', label: "Refonte de l'existant", price: "Sur devis", delay: "2-3 semaines" },
       ]
     },
-    "Prise / interrupteur défectueux": {
-      label: "Quel est le problème ?",
+    "Coaching dirigeant": {
+      label: "Quel type d'accompagnement ?",
       options: [
-        { id: 'remplacement', label: "Remplacement simple", price: "60€ - 100€", delay: "Moins de 2h" },
-        { id: 'chauffe', label: "Prise qui chauffe / étincelles", price: "100€ - 160€", delay: "Moins de 1h" },
+        { id: 'ponctuel', label: "Séances ponctuelles", price: "Sur devis", delay: "Flexible" },
+        { id: 'programme', label: "Programme de coaching complet", price: "Sur devis", delay: "3-6 mois" },
       ]
     },
-    "Autre intervention rapide": {
+    "Autre consultation": {
       label: "Précisez votre besoin",
       options: [
-        { id: 'standard', label: "Intervention standard", price: "80€ - 150€", delay: "Moins de 3h" },
+        { id: 'standard', label: "Consultation standard", price: "Sur devis", delay: "À définir" },
       ]
     }
   };
 
-  const currentSpec = formData.projectType ? urgentSpecs[formData.projectType as string] : null;
+  const currentSpec = formData.projectType ? ponctuelSpecs[formData.projectType as string] : null;
   const selectedSpecOption = currentSpec?.options.find(o => o.id === subType);
 
   const generateMessage = () => {
-    return `Bonjour ${COMPANY_INFO.name}, je souhaite un devis pour :
-- Catégorie: ${category === 'urgent' ? 'URGENCE' : 'PROJET'}
-- Type: ${formData.projectType} ${subType ? `(${selectedSpecOption?.label})` : ''}
-- Lieu: ${formData.location}
-- Surface: ${formData.surface}
+    return `Bonjour ${COMPANY_INFO.name}, je souhaite un rendez-vous pour :
+- Type: ${category === 'ponctuel' ? 'CONSULTATION PONCTUELLE' : 'ACCOMPAGNEMENT COMPLET'}
+- Domaine: ${formData.projectType} ${subType ? `(${selectedSpecOption?.label})` : ''}
+- Entreprise: ${formData.location}
+- Secteur: ${formData.surface}
 - Budget: ${formData.budget}
 - Nom: ${formData.name}
 - Détails: ${formData.details}`;
   };
 
-  const mailtoLink = `mailto:${COMPANY_INFO.email}?subject=Demande de devis - ${formData.name}&body=${encodeURIComponent(generateMessage())}`;
+  const mailtoLink = `mailto:${COMPANY_INFO.email}?subject=Demande de consultation - ${formData.name}&body=${encodeURIComponent(generateMessage())}`;
   const smsLink = `sms:${COMPANY_INFO.phoneClean}?body=${encodeURIComponent(generateMessage())}`;
 
   return (
@@ -120,7 +120,7 @@ export const QuoteWizard: React.FC = () => {
         {step === 1 && (
           <div className="animate-fade-in">
             <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin ?</h2>
-            <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez le type d'intervention.</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez le type de prestation souhaitée.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {categories.map((cat) => (
                 <button
@@ -145,12 +145,12 @@ export const QuoteWizard: React.FC = () => {
           </div>
         )}
 
-        {step === 2 && category === 'gros_oeuvre' && (
+        {step === 2 && category === 'accompagnement' && (
           <div className="animate-fade-in">
-            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel type de projet ?</h2>
-            <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez la catégorie de travaux.</p>
+            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel domaine ?</h2>
+            <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez votre domaine de besoin.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {majorTypes.map((mt) => (
+              {accompagnementTypes.map((mt) => (
                 <button
                   key={mt.type}
                   onClick={() => { updateField('projectType', mt.type); handleNext(); }}
@@ -173,27 +173,27 @@ export const QuoteWizard: React.FC = () => {
           </div>
         )}
 
-        {step === 3 && category === 'gros_oeuvre' && (
+        {step === 3 && category === 'accompagnement' && (
           <div className="animate-fade-in">
-            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-6">Détails du projet</h2>
+            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-6">Votre entreprise</h2>
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Ville / Code Postal</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom de l'entreprise</label>
                 <input
                   type="text"
                   className="w-full p-4 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-primary dark:text-white rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-colors"
-                  placeholder="ex: Saint-Étienne-Vallée-Française, 48330"
+                  placeholder="ex: Ma Société SAS"
                   value={formData.location}
                   onChange={(e) => updateField('location', e.target.value)}
                 />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Surface estimée (m²)</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Secteur d'activité</label>
                   <input
                     type="text"
                     className="w-full p-4 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-primary dark:text-white rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-colors"
-                    placeholder="ex: 80"
+                    placeholder="ex: Commerce, Services, Industrie..."
                     value={formData.surface}
                     onChange={(e) => updateField('surface', e.target.value)}
                   />
@@ -206,10 +206,10 @@ export const QuoteWizard: React.FC = () => {
                     onChange={(e) => updateField('budget', e.target.value)}
                   >
                     <option value="">Sélectionner une fourchette</option>
-                    <option value="< 1k">Moins de 1 000€</option>
-                    <option value="1k-3k">1 000€ - 3 000€</option>
-                    <option value="3k-7k">3 000€ - 7 000€</option>
-                    <option value="> 7k">Plus de 7 000€</option>
+                    <option value="< 2k">Moins de 2 000€</option>
+                    <option value="2k-5k">2 000€ - 5 000€</option>
+                    <option value="5k-10k">5 000€ - 10 000€</option>
+                    <option value="> 10k">Plus de 10 000€</option>
                   </select>
                 </div>
               </div>
@@ -227,12 +227,12 @@ export const QuoteWizard: React.FC = () => {
           </div>
         )}
 
-        {step === 2 && category === 'urgent' && (
+        {step === 2 && category === 'ponctuel' && (
           <div className="animate-fade-in">
             <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin ?</h2>
-            <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez le type de problème.</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez le type de consultation.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {urgentTypes.map((ut) => (
+              {ponctuelTypes.map((ut) => (
                 <button
                   key={ut.type}
                   onClick={() => { updateField('projectType', ut.type); handleNext(); }}
@@ -255,10 +255,10 @@ export const QuoteWizard: React.FC = () => {
           </div>
         )}
 
-        {step === 3 && category === 'urgent' && currentSpec && (
+        {step === 3 && category === 'ponctuel' && currentSpec && (
           <div className="animate-fade-in">
             <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">{currentSpec.label}</h2>
-            <p className="text-gray-500 dark:text-gray-400 mb-8">Précisez pour obtenir une estimation plus juste.</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-8">Précisez pour mieux cerner votre besoin.</p>
             <div className="grid grid-cols-1 gap-4">
               {currentSpec.options.map((opt) => (
                 <button
@@ -281,29 +281,29 @@ export const QuoteWizard: React.FC = () => {
           </div>
         )}
 
-        {step === 4 && category === 'urgent' && (
+        {step === 4 && category === 'ponctuel' && (
           <div className="animate-fade-in text-center">
             <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Icons.Phone className="w-8 h-8 text-accent animate-pulse" />
+              <Icons.Phone className="w-8 h-8 text-accent" />
             </div>
-            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-4">Intervention Prioritaire</h2>
+            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-4">Prenons rendez-vous</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 max-w-lg mx-auto">
               <div className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-xl border border-gray-100 dark:border-neutral-700">
-                <p className="text-xs text-gray-500 uppercase font-bold mb-1">Tarif estimé</p>
-                <p className="text-xl font-bold text-primary dark:text-white">{selectedSpecOption?.price || "80€ - 150€"}</p>
-                <p className="text-[10px] text-gray-400 mt-1">Hors pièces de rechange</p>
+                <p className="text-xs text-gray-500 uppercase font-bold mb-1">Tarif</p>
+                <p className="text-xl font-bold text-primary dark:text-white">{selectedSpecOption?.price || "Sur devis"}</p>
+                <p className="text-[10px] text-gray-400 mt-1">Selon périmètre défini</p>
               </div>
               <div className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-xl border border-gray-100 dark:border-neutral-700">
-                <p className="text-xs text-gray-500 uppercase font-bold mb-1">Délai moyen</p>
-                <p className="text-xl font-bold text-primary dark:text-white">{selectedSpecOption?.delay || "Moins de 2h"}</p>
+                <p className="text-xs text-gray-500 uppercase font-bold mb-1">Délai estimé</p>
+                <p className="text-xl font-bold text-primary dark:text-white">{selectedSpecOption?.delay || "À définir"}</p>
                 <p className="text-[10px] text-gray-400 mt-1">Selon disponibilité</p>
               </div>
             </div>
 
             <div className="bg-accent/5 dark:bg-accent/10 p-6 rounded-2xl border border-accent/20 mb-8 max-w-lg mx-auto">
               <p className="text-primary dark:text-white font-medium mb-4">
-                Veuillez nous appeler directement et expliquer votre problème. Nous vous rappellerons dans les meilleurs délais.
+                Appelez-nous pour un premier échange gratuit et sans engagement sur votre projet.
               </p>
               <a
                 href={`tel:${COMPANY_INFO.phoneClean}`}
@@ -318,7 +318,7 @@ export const QuoteWizard: React.FC = () => {
           </div>
         )}
 
-        {step === 4 && category === 'gros_oeuvre' && (
+        {step === 4 && category === 'accompagnement' && (
           <div className="animate-fade-in">
             <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-6">Vos coordonnées</h2>
             <div className="grid grid-cols-1 gap-6">
@@ -355,7 +355,7 @@ export const QuoteWizard: React.FC = () => {
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message (facultatif)</label>
                 <textarea
                   className="w-full p-4 border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-primary dark:text-white rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none h-32 resize-none transition-colors"
-                  placeholder="Précisions supplémentaires..."
+                  placeholder="Décrivez votre projet ou vos attentes..."
                   value={formData.details}
                   onChange={(e) => updateField('details', e.target.value)}
                 />
@@ -374,7 +374,7 @@ export const QuoteWizard: React.FC = () => {
           </div>
         )}
 
-        {step === 5 && category === 'gros_oeuvre' && (
+        {step === 5 && category === 'accompagnement' && (
           <div className="animate-fade-in text-center">
             <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
               <Icons.Check className="w-8 h-8 text-green-600 dark:text-green-400" />
@@ -387,9 +387,9 @@ export const QuoteWizard: React.FC = () => {
             <div className="bg-gray-50 dark:bg-neutral-950 p-6 rounded-xl text-left mb-8 border border-gray-100 dark:border-neutral-800 max-w-lg mx-auto">
               <h4 className="font-bold text-gray-900 dark:text-white mb-2">Résumé :</h4>
               <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                <li><span className="font-medium">Type:</span> {formData.projectType}</li>
-                <li><span className="font-medium">Lieu:</span> {formData.location}</li>
-                <li><span className="font-medium">Client:</span> {formData.name}</li>
+                <li><span className="font-medium">Domaine:</span> {formData.projectType}</li>
+                <li><span className="font-medium">Entreprise:</span> {formData.location}</li>
+                <li><span className="font-medium">Contact:</span> {formData.name}</li>
               </ul>
             </div>
 

@@ -37,14 +37,15 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/interventions" element={<Interventions />} />
-            <Route path="/gros-oeuvre" element={<GrosOeuvre />} />
+            <Route path="/services" element={<Interventions />} />
+            <Route path="/expertise" element={<GrosOeuvre />} />
             <Route path="/a-propos" element={<About />} />
             <Route path="/avis" element={<Reviews />} />
-            <Route path="/devis" element={
+            <Route path="/contact" element={
               <div className="pt-32 pb-20 px-4">
                 <div className="text-center mb-12">
-                  <h1 className="text-3xl font-display font-bold text-primary dark:text-white">Demande de Devis</h1>
+                  <h1 className="text-3xl font-display font-bold text-primary dark:text-white">Demande de Consultation</h1>
+                  <p className="text-gray-600 dark:text-gray-400 mt-2">Décrivez votre projet et nous vous recontacterons.</p>
                 </div>
                 <div className="max-w-4xl mx-auto">
                   <QuoteWizard />
