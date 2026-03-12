@@ -119,7 +119,7 @@ export const QuoteWizard: React.FC = () => {
       <div className="p-8 md:p-12 min-h-[400px] flex flex-col">
         {step === 1 && (
           <div className="animate-fade-in">
-            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin ?</h2>
+            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin&nbsp;?</h2>
             <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez le type de prestation souhaitée.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {categories.map((cat) => (
@@ -229,7 +229,7 @@ export const QuoteWizard: React.FC = () => {
 
         {step === 2 && category === 'ponctuel' && (
           <div className="animate-fade-in">
-            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin ?</h2>
+            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin&nbsp;?</h2>
             <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez le type de consultation.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {ponctuelTypes.map((ut) => (

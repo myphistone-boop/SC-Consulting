@@ -128,9 +128,9 @@ export const Home: React.FC = () => {
       <section className="py-8 md:py-12 bg-white dark:bg-neutral-900 transition-colors duration-300" id="contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
-            <div>
+            <div className="hidden lg:block">
               <h2 className="font-display font-bold text-2xl md:text-4xl text-primary dark:text-white mb-4 md:mb-6 leading-tight">
-                Besoin d'un conseil expert ? <br/>
+                Besoin d'un conseil expert&nbsp;? <br/>
                 <span className="text-accent">Contactez-nous</span>
               </h2>
               <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6 md:mb-8">
