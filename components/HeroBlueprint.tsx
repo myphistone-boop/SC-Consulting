@@ -38,9 +38,9 @@ export const HeroBlueprint: React.FC = () => {
           </div>
 
           <h1 className="font-display font-bold text-3xl md:text-5xl lg:text-6xl leading-[1.15] md:leading-[1.1] text-primary dark:text-white">
-            Marketing, Communication & <br/>
+            Conseil aux Entreprises, <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-600 relative inline-block">
-              Management Expert
+              Communication & Gestion
               <svg className="absolute w-full h-2 -bottom-1 left-0 text-accent/20" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0,5 Q50,10 100,5" fill="none" stroke="currentColor" strokeWidth="2" />
               </svg>
@@ -84,8 +84,8 @@ export const HeroBlueprint: React.FC = () => {
         <div className="relative hidden lg:block h-[600px]">
           <div className="absolute top-0 right-0 w-5/6 h-5/6 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 z-10 transform translate-x-4">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-              alt="Réunion de consulting professionnel"
+              src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Consultants-Meeting-Image-Header.jpg"
+              alt="Consultants SC+CONSULTING en réunion"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-multiply"></div>

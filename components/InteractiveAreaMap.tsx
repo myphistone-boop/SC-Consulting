@@ -34,7 +34,7 @@ export const InteractiveAreaMap: React.FC = () => {
     // Initialize Map
     mapInstanceRef.current = window.L.map(mapContainerRef.current, {
       center: center,
-      zoom: 12,
+      zoom: 8,
       zoomControl: false,
       scrollWheelZoom: false,
       dragging: true,
@@ -67,7 +67,7 @@ export const InteractiveAreaMap: React.FC = () => {
       color: '#C9A227',
       fillColor: '#C9A227',
       fillOpacity: 0.1,
-      radius: 20000, // 20km radius
+      radius: 100000, // 100km radius - covers Lyon, Grenoble, Valence
       weight: 2,
       dashArray: '5, 10'
     }).addTo(mapInstanceRef.current);

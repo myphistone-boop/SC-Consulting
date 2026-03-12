@@ -48,8 +48,7 @@ const galleryImages = [
   "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80",
   "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80",
   "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80"
+  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80"
 ];
 
 export const Reviews: React.FC = () => {

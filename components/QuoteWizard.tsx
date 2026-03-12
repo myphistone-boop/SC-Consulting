@@ -54,35 +54,35 @@ export const QuoteWizard: React.FC = () => {
     "Étude de marché": {
       label: "Quel niveau d'étude ?",
       options: [
-        { id: 'rapide', label: "Étude rapide (analyse concurrentielle)", price: "Sur devis", delay: "1-2 semaines" },
-        { id: 'complete', label: "Étude complète (marché + positionnement)", price: "Sur devis", delay: "3-4 semaines" },
+        { id: 'rapide', label: "Étude rapide (analyse concurrentielle)", price: "Nous consulter", delay: "1-2 semaines" },
+        { id: 'complete', label: "Étude complète (marché + positionnement)", price: "Nous consulter", delay: "3-4 semaines" },
       ]
     },
     "Business plan": {
       label: "Quel type de business plan ?",
       options: [
-        { id: 'creation', label: "Création d'entreprise", price: "Sur devis", delay: "2-3 semaines" },
-        { id: 'developpement', label: "Développement / nouveau projet", price: "Sur devis", delay: "2-4 semaines" },
+        { id: 'creation', label: "Création d'entreprise", price: "Nous consulter", delay: "2-3 semaines" },
+        { id: 'developpement', label: "Développement / nouveau projet", price: "Nous consulter", delay: "2-4 semaines" },
       ]
     },
     "Identité visuelle": {
       label: "Quel besoin ?",
       options: [
-        { id: 'creation', label: "Création complète (logo, charte...)", price: "Sur devis", delay: "2-4 semaines" },
-        { id: 'refonte', label: "Refonte de l'existant", price: "Sur devis", delay: "2-3 semaines" },
+        { id: 'creation', label: "Création complète (logo, charte...)", price: "Nous consulter", delay: "2-4 semaines" },
+        { id: 'refonte', label: "Refonte de l'existant", price: "Nous consulter", delay: "2-3 semaines" },
       ]
     },
     "Coaching dirigeant": {
       label: "Quel type d'accompagnement ?",
       options: [
-        { id: 'ponctuel', label: "Séances ponctuelles", price: "Sur devis", delay: "Flexible" },
-        { id: 'programme', label: "Programme de coaching complet", price: "Sur devis", delay: "3-6 mois" },
+        { id: 'ponctuel', label: "Séances ponctuelles", price: "Nous consulter", delay: "Flexible" },
+        { id: 'programme', label: "Programme de coaching complet", price: "Nous consulter", delay: "3-6 mois" },
       ]
     },
     "Autre consultation": {
       label: "Précisez votre besoin",
       options: [
-        { id: 'standard', label: "Consultation standard", price: "Sur devis", delay: "À définir" },
+        { id: 'standard', label: "Consultation standard", price: "Nous consulter", delay: "À définir" },
       ]
     }
   };
@@ -119,25 +119,25 @@ export const QuoteWizard: React.FC = () => {
       <div className="p-8 md:p-12 min-h-[400px] flex flex-col">
         {step === 1 && (
           <div className="animate-fade-in">
-            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin ?</h2>
+            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin&nbsp;?</h2>
             <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez le type de prestation souhaitée.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => { setCategory(cat.id as any); handleNext(); }}
-                  className={`p-6 rounded-xl border-2 text-left transition-all hover:shadow-lg flex items-start ${
+                  className={`p-4 md:p-5 rounded-xl border-2 text-left transition-all hover:shadow-lg flex items-start ${
                     category === cat.id
                       ? 'border-accent bg-accent/5 dark:bg-accent/10'
                       : 'border-gray-100 dark:border-neutral-800 hover:border-accent/50 dark:hover:border-accent/50'
                   }`}
                 >
-                  <div className={`p-3 rounded-full mr-4 ${category === cat.id ? 'bg-accent text-white' : 'bg-gray-100 dark:bg-neutral-800 text-gray-500 dark:text-gray-400'}`}>
-                    <cat.icon size={24} />
+                  <div className={`p-2 rounded-full mr-3 flex-shrink-0 ${category === cat.id ? 'bg-accent text-white' : 'bg-gray-100 dark:bg-neutral-800 text-gray-500 dark:text-gray-400'}`}>
+                    <cat.icon size={20} />
                   </div>
-                  <div>
-                    <h3 className="font-bold text-primary dark:text-white">{cat.title}</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{cat.desc}</p>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-primary dark:text-white text-sm leading-tight break-words">{cat.title}</h3>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-snug">{cat.desc}</p>
                   </div>
                 </button>
               ))}
@@ -229,7 +229,7 @@ export const QuoteWizard: React.FC = () => {
 
         {step === 2 && category === 'ponctuel' && (
           <div className="animate-fade-in">
-            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin ?</h2>
+            <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">Quel est votre besoin&nbsp;?</h2>
             <p className="text-gray-500 dark:text-gray-400 mb-8">Sélectionnez le type de consultation.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {ponctuelTypes.map((ut) => (
@@ -291,7 +291,7 @@ export const QuoteWizard: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 max-w-lg mx-auto">
               <div className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-xl border border-gray-100 dark:border-neutral-700">
                 <p className="text-xs text-gray-500 uppercase font-bold mb-1">Tarif</p>
-                <p className="text-xl font-bold text-primary dark:text-white">{selectedSpecOption?.price || "Sur devis"}</p>
+                <p className="text-xl font-bold text-primary dark:text-white">{selectedSpecOption?.price || "Nous consulter"}</p>
                 <p className="text-[10px] text-gray-400 mt-1">Selon périmètre défini</p>
               </div>
               <div className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-xl border border-gray-100 dark:border-neutral-700">
