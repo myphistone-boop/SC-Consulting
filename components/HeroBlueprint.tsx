@@ -84,8 +84,8 @@ export const HeroBlueprint: React.FC = () => {
         <div className="relative hidden lg:block h-[600px]">
           <div className="absolute top-0 right-0 w-5/6 h-5/6 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 z-10 transform translate-x-4">
             <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
-              alt="Consultant professionnel en entreprise"
+              src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Consultants-Meeting-Image-Header.jpg"
+              alt="Consultants SC+CONSULTING en réunion"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-multiply"></div>
