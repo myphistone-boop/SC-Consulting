@@ -126,18 +126,18 @@ export const QuoteWizard: React.FC = () => {
                 <button
                   key={cat.id}
                   onClick={() => { setCategory(cat.id as any); handleNext(); }}
-                  className={`p-6 rounded-xl border-2 text-left transition-all hover:shadow-lg flex items-start ${
+                  className={`p-4 md:p-6 rounded-xl border-2 text-left transition-all hover:shadow-lg flex items-start overflow-hidden ${
                     category === cat.id
                       ? 'border-accent bg-accent/5 dark:bg-accent/10'
                       : 'border-gray-100 dark:border-neutral-800 hover:border-accent/50 dark:hover:border-accent/50'
                   }`}
                 >
-                  <div className={`p-3 rounded-full mr-4 flex-shrink-0 ${category === cat.id ? 'bg-accent text-white' : 'bg-gray-100 dark:bg-neutral-800 text-gray-500 dark:text-gray-400'}`}>
-                    <cat.icon size={24} />
+                  <div className={`p-2 md:p-3 rounded-full mr-3 md:mr-4 flex-shrink-0 ${category === cat.id ? 'bg-accent text-white' : 'bg-gray-100 dark:bg-neutral-800 text-gray-500 dark:text-gray-400'}`}>
+                    <cat.icon size={20} />
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="font-bold text-primary dark:text-white text-sm sm:text-base">{cat.title}</h3>
-                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">{cat.desc}</p>
+                  <div className="min-w-0 overflow-hidden">
+                    <h3 className="font-bold text-primary dark:text-white text-sm leading-tight">{cat.title}</h3>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-snug">{cat.desc}</p>
                   </div>
                 </button>
               ))}
