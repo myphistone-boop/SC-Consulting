@@ -48,5 +48,5 @@ export const COMPANY_INFO = {
   siret: "83973597400017",
   linkedin: "https://www.linkedin.com/company/scplusconsulting/?originalSubdomain=fr",
   rating: "5,0",
-  reviewCount: 15
+  reviewCount: 1
 };
