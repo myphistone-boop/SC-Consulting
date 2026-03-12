@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-1">
             <div className="mb-6">
               <img
-                src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Logo%20Consulting.PNG"
+                src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Logo.png"
                 alt="SC+CONSULTING"
                 className="h-16 w-auto object-contain invert"
               />

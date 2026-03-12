@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="group flex items-center gap-3" onClick={closeMenu}>
             <img
-              src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Logo%20Consulting.PNG"
+              src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Logo.png"
               alt="SC+CONSULTING"
               className="h-12 w-auto object-contain dark:invert"
             />
@@ -105,7 +105,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between px-6 py-4 border-b dark:border-neutral-800">
           <div className="flex items-center gap-3">
             <img
-              src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Logo%20Consulting.PNG"
+              src="https://storage.googleapis.com/novelec_assets/Sc%20consulting/Logo.png"
               alt="SC+CONSULTING"
               className="h-10 w-auto object-contain dark:invert"
             />
