@@ -3,7 +3,7 @@ import { Icons } from './Icons';
 import { COMPANY_INFO } from '../types';
 
 export const StickyMobileBar: React.FC = () => {
-  const message = `Bonjour ${COMPANY_INFO.name}, je souhaiterais obtenir un devis pour mon projet d'électricité. Pourriez-vous me recontacter ?`;
+  const message = `Bonjour ${COMPANY_INFO.name}, je souhaiterais obtenir des informations sur vos services de conseil. Pourriez-vous me recontacter ?`;
   const whatsappUrl = `https://wa.me/${COMPANY_INFO.phoneClean.replace('+', '')}?text=${encodeURIComponent(message)}`;
 
   return (

@@ -10,7 +10,6 @@ export const Navbar: React.FC = () => {
 
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined' && window.localStorage) {
-      // Prioritize saved theme, but default to 'light' instead of system preference
       return localStorage.getItem('theme') || 'light';
     }
     return 'light';
@@ -43,17 +42,16 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Accueil', path: '/' },
-    { name: 'Interventions', path: '/interventions' },
-    { name: 'Gros Œuvre', path: '/gros-oeuvre' },
+    { name: 'Services', path: '/services' },
+    { name: 'Expertise', path: '/expertise' },
     { name: 'Avis', path: '/avis' },
     { name: 'À Propos', path: '/a-propos' },
   ];
 
   const closeMenu = () => setIsMobileMenuOpen(false);
 
-  // Background is immediate, shadow and padding are animated
   const navbarClasses = isScrolled || isMobileMenuOpen
-    ? 'bg-white dark:bg-neutral-900 shadow-md py-3' 
+    ? 'bg-white dark:bg-neutral-900 shadow-md py-3'
     : 'bg-transparent py-6';
 
   return (
@@ -62,11 +60,11 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="group flex items-center gap-3" onClick={closeMenu}>
             <div className="h-12 w-12 bg-accent rounded-xl flex items-center justify-center">
-              <Icons.Electric className="w-7 h-7 text-primary" />
+              <Icons.Briefcase className="w-7 h-7 text-primary" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-xl tracking-tight text-primary dark:text-white leading-none">{COMPANY_INFO.name}</span>
-              <span className="text-[8px] tracking-[0.2em] text-accent uppercase font-medium mt-1">Électricien</span>
+              <span className="text-[8px] tracking-[0.2em] text-accent uppercase font-medium mt-1">Conseil aux Entreprises</span>
             </div>
           </Link>
 
@@ -88,8 +86,8 @@ export const Navbar: React.FC = () => {
             <button onClick={toggleTheme} className="p-2 text-primary dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-full transition-colors">
               {theme === 'dark' ? <Icons.Sun size={20} /> : <Icons.Moon size={20} />}
             </button>
-            <Link to="/devis" className="px-5 py-2.5 bg-primary dark:bg-accent text-white dark:text-primary text-xs font-bold uppercase rounded-full shadow-lg hover:scale-105 transition-transform">
-              Devis
+            <Link to="/contact" className="px-5 py-2.5 bg-primary dark:bg-accent text-white dark:text-primary text-xs font-bold uppercase rounded-full shadow-lg hover:scale-105 transition-transform">
+              Contact
             </Link>
           </div>
 
@@ -109,7 +107,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between px-6 py-4 border-b dark:border-neutral-800">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 bg-accent rounded-xl flex items-center justify-center">
-              <Icons.Electric className="w-6 h-6 text-primary" />
+              <Icons.Briefcase className="w-6 h-6 text-primary" />
             </div>
             <span className="font-display font-bold text-xl text-primary dark:text-white">{COMPANY_INFO.name}</span>
           </div>
@@ -123,8 +121,8 @@ export const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
-          <Link to="/devis" onClick={closeMenu} className="block w-full py-5 bg-primary dark:bg-accent text-white dark:text-primary text-center font-bold rounded-xl shadow-xl mt-8">
-            Demander un devis
+          <Link to="/contact" onClick={closeMenu} className="block w-full py-5 bg-primary dark:bg-accent text-white dark:text-primary text-center font-bold rounded-xl shadow-xl mt-8">
+            Nous Contacter
           </Link>
         </div>
       </div>

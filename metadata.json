@@ -1,6 +1,6 @@
 {
-  "name": "SERIN Plomberie - Plombier Chauffagiste",
-  "description": "Site vitrine pour SERIN Plomberie. Expert en plomberie, chauffage et sanitaire. Interventions rapides et travaux de qualité.",
+  "name": "SC+CONSULTING - Conseil aux Entreprises",
+  "description": "Site vitrine pour SC+CONSULTING. Société de conseil aux professionnels dans le domaine du marketing, de la communication, du management et de la gestion.",
   "requestFramePermissions": [
     "geolocation"
   ]

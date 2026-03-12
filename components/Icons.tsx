@@ -1,14 +1,14 @@
 import React from 'react';
-import { 
-  Hammer, 
-  Home, 
-  Zap, 
-  Wind, 
-  Ruler, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  CheckCircle2, 
+import {
+  Hammer,
+  Home,
+  Zap,
+  Wind,
+  Ruler,
+  Phone,
+  MapPin,
+  Clock,
+  CheckCircle2,
   ArrowRight,
   Menu,
   X,
@@ -28,7 +28,16 @@ import {
   Minus,
   Wrench,
   Droplet,
-  Settings
+  Settings,
+  Briefcase,
+  TrendingUp,
+  Users,
+  Target,
+  Lightbulb,
+  MessageSquare,
+  PieChart,
+  Megaphone,
+  Linkedin
 } from 'lucide-react';
 
 export const Icons = {
@@ -61,5 +70,14 @@ export const Icons = {
   Wrench: Wrench,
   Droplet: Droplet,
   Settings: Settings,
-  Hammer: Hammer
+  Hammer: Hammer,
+  Briefcase: Briefcase,
+  TrendingUp: TrendingUp,
+  Users: Users,
+  Target: Target,
+  Lightbulb: Lightbulb,
+  MessageSquare: MessageSquare,
+  PieChart: PieChart,
+  Megaphone: Megaphone,
+  Linkedin: Linkedin
 };

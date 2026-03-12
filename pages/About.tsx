@@ -15,11 +15,11 @@ export const About: React.FC = () => {
                 <span className="text-accent">{COMPANY_INFO.name}</span>
               </h1>
               <ExpandableText
-                text={`Électricien professionnel passionné, ${COMPANY_INFO.name} met son savoir-faire au service des particuliers et professionnels. Installé dans la région de ${COMPANY_INFO.zone}, nous intervenons pour tous vos besoins en électricité, installation et mise aux normes.`}
+                text={`Fondée en 2018 par ${COMPANY_INFO.owner}, ${COMPANY_INFO.name} est une société de conseil aux professionnels spécialisée dans le marketing, la communication, le management et la gestion. Basée à ${COMPANY_INFO.address}, nous accompagnons les entreprises de la région dans leur développement.`}
                 className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
               />
               <ExpandableText
-                text="Notre philosophie : un travail de qualité, des tarifs transparents et une réactivité exemplaire. Que ce soit pour un dépannage ou un projet d'installation complète, nous vous accompagnons avec le même niveau d'exigence."
+                text="Notre philosophie : un accompagnement personnalisé, des solutions concrètes et une relation de confiance durable avec nos clients. Que ce soit pour définir votre stratégie marketing ou optimiser votre gestion, nous mettons notre expertise à votre service."
                 className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
               />
 
@@ -29,8 +29,8 @@ export const About: React.FC = () => {
                     <Icons.Shield className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-primary dark:text-white mb-1">Normes NFC 15-100</h3>
-                    <p className="text-sm text-gray-500">Travaux conformes et certifiés.</p>
+                    <h3 className="font-bold text-primary dark:text-white mb-1">Expertise Reconnue</h3>
+                    <p className="text-sm text-gray-500">Consultants expérimentés et certifiés.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -38,8 +38,8 @@ export const About: React.FC = () => {
                     <Icons.Check className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-primary dark:text-white mb-1">Devis Gratuit</h3>
-                    <p className="text-sm text-gray-500">Estimation précise et sans surprise.</p>
+                    <h3 className="font-bold text-primary dark:text-white mb-1">Résultats Concrets</h3>
+                    <p className="text-sm text-gray-500">Objectifs mesurables et atteignables.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -48,16 +48,16 @@ export const About: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-primary dark:text-white mb-1">Réactivité</h3>
-                    <p className="text-sm text-gray-500">Intervention rapide en cas de panne.</p>
+                    <p className="text-sm text-gray-500">Disponibles du lundi au samedi.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <div className="bg-accent/10 p-3 rounded-lg mr-4">
-                    <Icons.HardHat className="w-6 h-6 text-accent" />
+                    <Icons.Users className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-primary dark:text-white mb-1">Expertise</h3>
-                    <p className="text-sm text-gray-500">Électricien qualifié et expérimenté.</p>
+                    <h3 className="font-bold text-primary dark:text-white mb-1">Sur Mesure</h3>
+                    <p className="text-sm text-gray-500">Solutions adaptées à chaque entreprise.</p>
                   </div>
                 </div>
               </div>
@@ -66,13 +66,13 @@ export const About: React.FC = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-neutral-800">
                 <img
-                  src="https://storage.googleapis.com/novelec_assets/M%20MTRAVAUX/Expertise%202.webp"
-                  alt="Électricien au travail"
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+                  alt="Équipe de consultants SC+CONSULTING"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-xl border border-gray-100 dark:border-neutral-700 max-w-xs hidden md:block">
-                <p className="font-display font-bold text-xl text-primary dark:text-white mb-2">"La qualité est notre priorité."</p>
+                <p className="font-display font-bold text-xl text-primary dark:text-white mb-2">"Votre réussite est notre mission."</p>
                 <p className="text-sm text-gray-500">{COMPANY_INFO.name}</p>
               </div>
             </div>

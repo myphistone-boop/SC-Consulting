@@ -27,14 +27,14 @@ export const InteractiveAreaMap: React.FC = () => {
   useEffect(() => {
     if (!mapContainerRef.current || !window.L) return;
 
-    // Center on Saint-Étienne-Vallée-Française
-    const center: [number, number] = [44.2167, 3.8333];
-    const stEtienne: [number, number] = [44.2167, 3.8333];
+    // Center on Le Péage-de-Roussillon
+    const center: [number, number] = [45.3667, 4.8000];
+    const peage: [number, number] = [45.3667, 4.8000];
 
     // Initialize Map
     mapInstanceRef.current = window.L.map(mapContainerRef.current, {
       center: center,
-      zoom: 11,
+      zoom: 12,
       zoomControl: false,
       scrollWheelZoom: false,
       dragging: true,
@@ -60,14 +60,14 @@ export const InteractiveAreaMap: React.FC = () => {
     });
 
     // Add Marker
-    window.L.marker(stEtienne, { icon: customIcon }).addTo(mapInstanceRef.current).bindPopup('<b class="text-primary">Saint-Étienne-Vallée-Française</b>');
+    window.L.marker(peage, { icon: customIcon }).addTo(mapInstanceRef.current).bindPopup('<b class="text-primary">SC+CONSULTING</b><br/>18 Rue Bois Imbert<br/>38550 Le Péage-de-Roussillon');
 
     // Service Area Circle
     window.L.circle(center, {
       color: '#C9A227',
       fillColor: '#C9A227',
       fillOpacity: 0.1,
-      radius: 30000, // 30km radius
+      radius: 20000, // 20km radius
       weight: 2,
       dashArray: '5, 10'
     }).addTo(mapInstanceRef.current);
@@ -126,7 +126,7 @@ export const InteractiveAreaMap: React.FC = () => {
       <div className="absolute bottom-4 left-4 z-[1000] pointer-events-none">
         <div className="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-gray-200 shadow-lg flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-            <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Zone : Lozère (48)</span>
+            <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Le Péage-de-Roussillon (38)</span>
         </div>
       </div>
     </div>
